@@ -1,0 +1,22 @@
+# 编辑器
+.DS_Store
+*.swp
+.idea/
+.vscode/
+
+# 系统/临时
+node_modules/
+*.log
+/tmp/
+
+# 生成产物（保留示例）
+/clips/
+/frames/
+/out/
+*.mp4
+*.jpg
+*.png
+
+# 保留
+!assets/demo-horizontal.mp4
+!assets/cover.jpg

@@ -1,0 +1,261 @@
+/* ===== 古典诗词鉴赏 — 视觉风格 ===== */
+:root{
+  --ink:#1c1410;
+  --rice:#f3ead2;
+  --rice-2:#ebe0c2;
+  --paper:#f6efd9;
+  --paper-2:#f0e6c4;
+  --gold:#a87532;
+  --gold-2:#7a4a1f;
+  --crimson:#8a2424;
+  --shadow:0 18px 50px rgba(46,30,12,.18);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  font-family:"Noto Serif SC","Source Han Serif SC","Songti SC","SimSun",serif;
+  color:var(--ink);
+  background:
+    radial-gradient(1200px 800px at 10% -10%, #fbf3df 0%, transparent 60%),
+    radial-gradient(1000px 700px at 110% 110%, #e9dcb1 0%, transparent 55%),
+    linear-gradient(180deg,#f7efd6,#efe2b6);
+  min-height:100vh;
+  overflow-x:hidden;
+  position:relative;
+}
+
+/* ===== 漂浮水墨 ===== */
+.ink{
+  position:fixed;inset:0;
+  pointer-events:none;z-index:0;
+  opacity:.55;
+}
+.ink span{
+  position:absolute;
+  width:140px;height:140px;
+  border-radius:50%;
+  filter:blur(40px);
+  mix-blend-mode:multiply;
+  animation:float 18s ease-in-out infinite;
+}
+.ink span:nth-child(1){background:radial-gradient(circle,#2b1d10,transparent 70%);top:-40px;left:8%;animation-delay:0s}
+.ink span:nth-child(2){background:radial-gradient(circle,#6b4a23,transparent 70%);bottom:5%;right:6%;animation-delay:3s}
+.ink span:nth-child(3){background:radial-gradient(circle,#1a1209,transparent 70%);top:40%;left:55%;animation-delay:6s;width:180px;height:180px}
+.ink span:nth-child(4){background:radial-gradient(circle,#7a5a2a,transparent 70%);top:75%;left:15%;animation-delay:9s}
+@keyframes float{
+  0%,100%{transform:translate(0,0) scale(1)}
+  50%{transform:translate(30px,-20px) scale(1.1)}
+}
+
+/* ===== 主容器 ===== */
+.paper{
+  position:relative;z-index:1;
+  max-width:880px;
+  margin:48px auto;
+  padding:36px 44px 28px;
+  background:
+    linear-gradient(180deg,rgba(255,255,255,.4),rgba(255,255,255,.1)),
+    repeating-linear-gradient(0deg,transparent 0,transparent 31px,rgba(120,90,40,.06) 32px),
+    var(--paper);
+  border:1px solid rgba(122,74,31,.25);
+  border-radius:6px;
+  box-shadow:var(--shadow);
+  background-image:
+    radial-gradient(circle at 12% 10%, rgba(0,0,0,.03) 1px, transparent 2px),
+    radial-gradient(circle at 88% 90%, rgba(0,0,0,.03) 1px, transparent 2px),
+    repeating-linear-gradient(0deg,transparent 0,transparent 31px,rgba(120,90,40,.05) 32px),
+    linear-gradient(180deg,#f8f0d8,#efe2b6);
+}
+header{
+  text-align:center;
+  padding-bottom:18px;
+  border-bottom:1px dashed rgba(122,74,31,.4);
+}
+.brand{
+  font-size:32px;
+  letter-spacing:.55em;
+  color:var(--gold-2);
+  text-shadow:1px 1px 0 rgba(255,255,255,.6);
+}
+.sub{
+  margin-top:8px;
+  font-size:12px;
+  letter-spacing:.3em;
+  color:#6b4a23;
+}
+
+/* ===== 诗词卡片 ===== */
+.card{
+  position:relative;
+  margin:28px auto 18px;
+  padding:30px 36px 24px;
+  background:
+    linear-gradient(180deg,#fbf4dd,#f1e3b8);
+  border:1px solid rgba(122,74,31,.2);
+  border-radius:4px;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.4);
+}
+.seal{
+  position:absolute;top:18px;right:22px;
+  width:54px;height:54px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:26px;color:#fff;
+  background:var(--crimson);
+  border:2px solid #5b1313;
+  border-radius:6px;
+  letter-spacing:0;
+  box-shadow:inset 0 0 6px rgba(0,0,0,.35), 0 2px 6px rgba(0,0,0,.2);
+  transform:rotate(-6deg);
+  font-weight:700;
+}
+.title{
+  text-align:center;
+  font-size:30px;
+  font-weight:700;
+  letter-spacing:.25em;
+  color:#3a2410;
+  margin-right:60px;
+}
+.meta{
+  text-align:center;
+  margin-top:10px;
+  font-size:13px;
+  letter-spacing:.18em;
+  color:#6b4a23;
+}
+.verse{
+  margin:26px auto 18px;
+  text-align:center;
+  font-size:22px;
+  line-height:2.1;
+  letter-spacing:.12em;
+  color:#2a1808;
+  white-space:pre-line;
+}
+.verse .ch{color:#1a0e02}
+.panel{
+  margin-top:18px;
+  padding:14px 18px;
+  border-left:3px solid var(--gold);
+  background:rgba(255,250,225,.55);
+  border-radius:2px;
+}
+.panel h3{
+  font-size:14px;
+  letter-spacing:.4em;
+  color:var(--gold-2);
+  margin-bottom:6px;
+}
+.panel p{
+  font-size:15px;
+  line-height:1.95;
+  color:#3a2410;
+  white-space:pre-line;
+}
+
+/* ===== 操作按钮 ===== */
+.actions{
+  display:flex;justify-content:center;gap:14px;
+  margin:22px 0 8px;
+  flex-wrap:wrap;
+}
+button{
+  font-family:inherit;
+  font-size:14px;
+  letter-spacing:.2em;
+  padding:10px 22px;
+  border:1px solid var(--gold-2);
+  background:linear-gradient(180deg,#fbf3df,#e9d99e);
+  color:var(--gold-2);
+  border-radius:3px;
+  cursor:pointer;
+  transition:all .25s ease;
+  box-shadow:0 2px 0 rgba(122,74,31,.18);
+}
+button:hover{
+  transform:translateY(-1px);
+  box-shadow:0 4px 0 rgba(122,74,31,.22);
+  background:linear-gradient(180deg,#fff7e3,#ecdca0);
+}
+button:active{transform:translateY(1px);box-shadow:0 1px 0 rgba(122,74,31,.18)}
+button.ghost{
+  background:transparent;
+  border:1px dashed var(--gold-2);
+  box-shadow:none;
+}
+
+/* ===== 收藏夹 ===== */
+.favorites{
+  margin:20px auto 0;
+  padding:18px 22px;
+  background:rgba(255,250,225,.7);
+  border:1px dashed rgba(122,74,31,.35);
+  border-radius:4px;
+}
+.favorites h3{
+  font-size:14px;
+  letter-spacing:.4em;
+  color:var(--gold-2);
+  margin-bottom:10px;
+}
+.favorites ul{
+  list-style:none;
+  padding:0;
+  margin:0 0 12px;
+}
+.favorites li{
+  padding:8px 6px;
+  border-bottom:1px dotted rgba(122,74,31,.3);
+  display:flex;justify-content:space-between;align-items:center;
+  gap:10px;
+  font-size:14px;
+}
+.favorites li:last-child{border-bottom:none}
+.favorites .poem-title{color:#3a2410;font-weight:600}
+.favorites .poem-meta{color:#6b4a23;font-size:12px}
+.favorites .remove{
+  border:none;background:none;color:#8a2424;cursor:pointer;font-size:16px;
+  padding:0 6px;
+}
+.favorites .remove:hover{color:#c0392a}
+
+/* ===== 页脚 ===== */
+footer{
+  margin-top:24px;
+  padding-top:14px;
+  border-top:1px dashed rgba(122,74,31,.35);
+  display:flex;justify-content:space-between;
+  font-size:12px;
+  letter-spacing:.18em;
+  color:#6b4a23;
+}
+footer strong{color:var(--gold-2);font-weight:600}
+
+/* ===== 入场动画 ===== */
+.card{
+  animation:fadeIn .8s ease;
+}
+@keyframes fadeIn{
+  from{opacity:0;transform:translateY(8px)}
+  to{opacity:1;transform:translateY(0)}
+}
+.verse span.ch{
+  display:inline-block;
+  opacity:0;
+  animation:typeIn .35s ease forwards;
+}
+@keyframes typeIn{
+  from{opacity:0;transform:translateY(-4px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+/* ===== 响应式 ===== */
+@media (max-width:768px){
+  .paper{margin:18px 10px;padding:24px 18px 18px}
+  .brand{font-size:24px;letter-spacing:.4em}
+  .title{font-size:22px;margin-right:0}
+  .seal{width:46px;height:46px;font-size:20px;top:14px;right:14px}
+  .verse{font-size:18px}
+  .panel{padding:12px 14px}
+  .panel p{font-size:14px}
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>今日一诗 · 古典诗词鉴赏</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="paper">
+  <header>
+    <div class="brand">今 日 一 诗</div>
+    <div class="sub">Classical Chinese Poetry · 随 机 鉴 赏</div>
+  </header>
+
+  <main>
+    <article id="card" class="card">
+      <div class="seal">诗</div>
+      <h2 class="title" id="title">载入中…</h2>
+      <p class="meta">
+        <span id="dynasty">—</span> ·
+        <span id="author">—</span> ·
+        <span id="category">—</span>
+      </p>
+
+      <div class="verse" id="verse"></div>
+
+      <section class="panel">
+        <h3>注 释</h3>
+        <p id="annotation"></p>
+      </section>
+
+      <section class="panel">
+        <h3>译 文</h3>
+        <p id="translation"></p>
+      </section>
+
+      <section class="panel">
+        <h3>赏 析</h3>
+        <p id="appreciation"></p>
+      </section>
+    </article>
+
+    <div class="actions">
+      <button id="refresh">换一首 ↻</button>
+      <button id="copy">复制全诗 ⎘</button>
+      <button id="favorite">收藏 ❤</button>
+    </div>
+
+    <aside class="favorites" id="favorites" hidden>
+      <h3>我 的 收 藏</h3>
+      <ul id="favorite-list"></ul>
+      <button id="clear-fav" class="ghost">清空收藏</button>
+    </aside>
+  </main>
+
+  <footer>
+    <span>水墨意象 · 像素画卷</span>
+    <span>共收录 <strong id="count"></strong> 首</span>
+  </footer>
+</div>
+
+<div class="ink" id="ink"></div>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
